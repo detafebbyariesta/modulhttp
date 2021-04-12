@@ -4,7 +4,4 @@
          to allow setting breakpoints, to provide hot reload, etc.
     -->
     <uses-permission android:name="android.permission.INTERNET"/>
-    <application android:label="moviedb2" android:icon="@mipmap/ic_launcher">
-    <activity android:name=".MainActivity" android:launchMode="singleTop" android:theme="@style/LaunchTheme" 
-    <meta-data android:name="io.flutter.embedding.android.NormalTheme" android:resource="@style/NormalTheme"/>
 </manifest>

@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MovieList();
   }
 }
