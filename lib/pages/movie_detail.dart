@@ -37,7 +37,6 @@ class MovieDetail extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     "     Rating : " + movie.voteAverage.toString(),
-                    style: TextStyle(color: Colors.black),
                   )
                 ],
               ),
@@ -45,13 +44,13 @@ class MovieDetail extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     "     Release Date : " + movie.releaseDate,
-                    style: TextStyle(color: Colors.black),
                   )
                 ],
               ),
               Container(
-                child: Text(movie.overview),
+                child: Text("\n" + movie.overview),
                 padding: EdgeInsets.only(left: 16, right: 16),
+                
               ),
             ],
           ),

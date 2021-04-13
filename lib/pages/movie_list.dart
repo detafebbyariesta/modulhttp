@@ -8,10 +8,12 @@ class MovieList extends StatefulWidget {
 }
 
 class _MovieListState extends State<MovieList> {
-int moviesCount;
+  int moviesCount;
   List movies;
   HttpService service;
- Future initialize() async {
+  String imgPath = 'https://image.tmdb.org/t/p/w500/';
+
+  Future initialize() async {
     movies = [];
     movies = await service.getPopularMovies();
     setState(() {
@@ -19,10 +21,10 @@ int moviesCount;
       movies = movies;
     });
   }
- @override
-  void initState(){
+
+  @override
+  void initState() {
     service = HttpService();
-    //Tambahkan function initialize pada initState 
     initialize();
     super.initState();
   }
@@ -31,29 +33,43 @@ int moviesCount;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: .5,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {},
+        ),
         title: Text("Popular Movies"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
+          )
+        ],
       ),
- body: ListView.builder(
-        itemCount : (this.moviesCount == null) ? 0 : this.moviesCount,
-        itemBuilder: (context, int position) {
-          return Card(
-            color: Colors.white,
-            elevation: 2.0,
-            child: ListTile(
-              title: Text(movies[position].title),
-leading: Image.network('https://image.tmdb.org/t/p/w500/' +  movies[position].posterPath),
-              subtitle: Text(
-                'Rating = ' + movies[position].voteAverage.toString(),
+      body: GridView.builder(
+          itemCount: (this.moviesCount == null) ? 0 : this.moviesCount,
+          padding: const EdgeInsets.all(20),gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 2 / 3,
+            mainAxisSpacing: 20.0,
+            crossAxisSpacing: 20.0,
+          ),
+          itemBuilder: (context, int position) {
+            return GridTile(
+              child: InkResponse(
+                enableFeedback: true,
+                child: Image.network(
+                  imgPath + movies[position].posterPath,
+                  fit: BoxFit.cover,
+                ),
+                onTap: () {
+                  MaterialPageRoute route = MaterialPageRoute(
+                      builder: (_) => MovieDetail(movies[position]));
+                  Navigator.push(context, route);
+                },
               ),
-  onTap: (){
-                MaterialPageRoute route = MaterialPageRoute(
-                  builder: (_) => MovieDetail(movies[position]));
-                Navigator.push(context, route);
-              },
-            ),
-          );
-        },
-      ),
+            );
+          }),
     );
   }
 }
