@@ -5,7 +5,7 @@ import 'package:modulhttp/models/movie.dart';
 
 class HttpService {
   final String apiKey = '260f7b3aa42e5f1cdb94ca4f44d9b184';
-  final String baseUrl = 'http://api.themoviedb.org/3/movie/popular?api_key=';
+  final String baseUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=';
 
   
   Future<List> getPopularMovies() async {

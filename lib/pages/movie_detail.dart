@@ -10,11 +10,12 @@ class MovieDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String path;
-    
-    if(movie.posterPath != null){
+
+    if (movie.posterPath != null) {
       path = imgPath + movie.posterPath;
     } else {
-      path = 'https://images.freeimages.com/images/large-previews/5eb/movie-clapboard-1184339.jpg';
+      path =
+          'https://images.freeimages.com/images/large-previews/5eb/movie-clapboard-1184339.jpg';
     }
 
     double height = MediaQuery.of(context).size.height;
@@ -23,7 +24,6 @@ class MovieDetail extends StatelessWidget {
       appBar: AppBar(
         title: Text(movie.title),
       ),
-
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -33,12 +33,25 @@ class MovieDetail extends StatelessWidget {
                 height: height / 1.5,
                 child: Image.network(path),
               ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    "     Rating : " + movie.voteAverage.toString(),
+                    style: TextStyle(color: Colors.black),
+                  )
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    "     Release Date : " + movie.releaseDate,
+                    style: TextStyle(color: Colors.black),
+                  )
+                ],
+              ),
               Container(
                 child: Text(movie.overview),
-                padding: EdgeInsets.only(
-                  left: 16, 
-                  right: 16
-                ),
+                padding: EdgeInsets.only(left: 16, right: 16),
               ),
             ],
           ),
