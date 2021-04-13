@@ -1,8 +1,8 @@
 # modulhttp
 
 ![ss1](https://user-images.githubusercontent.com/70737655/114346008-ed116900-9b8c-11eb-9b2b-129fb7280e17.jpg)
-![ss2](https://user-images.githubusercontent.com/70737655/114346016-f0a4f000-9b8c-11eb-86ef-cbb85409c379.jpg)!
-[ss4](https://user-images.githubusercontent.com/70737655/114514986-13570780-9c66-11eb-9802-f0cfd4a9e258.jpg)
+![ss2](https://user-images.githubusercontent.com/70737655/114346016-f0a4f000-9b8c-11eb-86ef-cbb85409c379.jpg)
+![ss4](https://user-images.githubusercontent.com/70737655/114514986-13570780-9c66-11eb-9802-f0cfd4a9e258.jpg)
 ![ss5](https://user-images.githubusercontent.com/70737655/114515001-16ea8e80-9c66-11eb-9b5b-6eb95fd13670.jpg)
 
 
